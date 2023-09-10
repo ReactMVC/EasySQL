@@ -374,16 +374,4 @@ class EasySQL
             return $stmt->execute($values);
         }
     }
-
-    /**
-     * Sets the character set for the database connection.
-     *
-     * @param string $charset The character set to use.
-     */
-    public function setCharset($charset)
-    {
-        $this->charset = $charset;
-        $dsn = "mysql:host=$this->host;dbname=$this->database;charset=$this->charset";
-        $this->pdo = new PDO($dsn, $this->username, $this->password);
-    }
 }
